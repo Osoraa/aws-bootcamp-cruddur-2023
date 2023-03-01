@@ -39,3 +39,5 @@ aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}
 # sso_role_name = ${AWS_ROLE_NAME}
 # region = ${AWS_REGION}
 AWSFILE
+
+export AWS_CLI_AUTO_PROMPT="on-partial"
