@@ -16,5 +16,23 @@ sudo ./aws/install --update
 cd $OLD_DIR
 rm -rf $TMP_DIR
 
-# Configure AWS credentials
+# AWS config
+cat <<- AWSFILE > /home/gitpod/.aws/config
+[default]
+# sso_start_url = ${AWS_SSO_URL}
+# sso_region = ${AWS_SSO_REGION}
+account_id = ${AWS_ACCOUNT_ID}
+role_name = ${AWS_ROLE_NAME}
+region = ${AWS_REGION}
+output = ${yaml}
+AWSFILE
 
+# AWS credentials
+cat <<- AWSFILE > /home/gitpod/.aws/credentials
+[default]
+aws_access_key_id = ${AWS_ACCESS_KEY_ID}
+aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}
+# region = ${AWS_SSO_REGION}
+# sso_role_name = ${AWS_ROLE_NAME}
+# region = ${AWS_REGION}
+AWSFILE
