@@ -27,7 +27,7 @@ cat <<- AWSFILE > /home/gitpod/.aws/config
 account_id = ${AWS_ACCOUNT_ID}
 role_name = ${AWS_ROLE_NAME}
 region = ${AWS_REGION}
-output = ${yaml}
+output = "yaml"
 AWSFILE
 
 # AWS credentials
