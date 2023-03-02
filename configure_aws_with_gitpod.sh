@@ -16,6 +16,9 @@ sudo ./aws/install --update
 cd $OLD_DIR
 rm -rf $TMP_DIR
 
+# Create .aws folder if it doesn't exist already
+[[ -d ~/.aws ]] || mkdir ~/.aws
+
 # AWS config
 cat <<- AWSFILE > /home/gitpod/.aws/config
 [default]
